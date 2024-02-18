@@ -129,8 +129,8 @@
                             <div>
                                 <img src="images/seat-green.png" alt="">
                             </div>
-                            <div>
-                                <p><span>8 </span>Seats left</p>
+                            <div class="left-parent">
+                                <p class=""><span class="left">8 </span>Seats left</p>
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                             
                               <div class="flex">
                                 <div class="flex items-center justify-center">
-                                    <th>Seat <span class="bg-[#1DD100] p-1 rounded-full text-white">0</span>
+                                    <th>Seat <span class="upgrade bg-[#1DD100] p-1 rounded-full text-white">0</span>
                                     </th>
                                   </div>
                                   <th>Class</th>
@@ -302,6 +302,31 @@
                   </nav>
             </div>
      </footer>
+<script src="js/app-1.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const seats = document.querySelectorAll(".table tbody tr");
+        let totalPrice = 0;
 
+        for (let i = 0; i < seats.length; i++) {
+            seats[i].addEventListener("click", function () {
+                if (!seats[i].classList.contains("selected")) {
+                    seats[i].classList.add("selected");
+                    totalPrice += parseInt(seats[i].querySelector("td:nth-child(3)").textContent);
+                } else {
+                    seats[i].classList.remove("selected");
+                    totalPrice -= parseInt(seats[i].querySelector("td:nth-child(3)").textContent);
+                }
+
+                updateTotalPrice();
+            });
+        }
+
+        function updateTotalPrice() {
+            const totalElement = document.querySelector(".flex.justify-between.items-center h1");
+            totalElement.textContent = `BDT ${totalPrice}`;
+        }
+    });
+</script>
 </body>
 </html>
