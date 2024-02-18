@@ -130,7 +130,7 @@
                                 <img src="images/seat-green.png" alt="">
                             </div>
                             <div>
-                                <p>40 Seats left</p>
+                                <p><span>8 </span>Seats left</p>
                             </div>
                         </div>
                     </div>
@@ -188,36 +188,17 @@
                        <div class="mt-5 flex justify-end"><img class="bg-[#1DD10026] lg:px-9 py-2 mb-4 rounded-xl" src="images/drive.svg" alt=""></div>
 
                     <div class="md:grid-cols-5 lg:grid grid-cols-5 gap-12">
-                         <button class="btn">A</button>
+                         <button class="">A</button>
                          <button class="btn">A1</button>
                          <button class="btn">A2</button>
                          <button class="btn">A3</button>
                          <button class="btn">A4</button>
-                         <button class="btn">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
-                         <button class="btn">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
-                         <button class="btn">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
-                         <button class="btn">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
-                         <button class="btn">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
+                         <button class="">B</button>
+                         <button class="btn">B1</button>
+                         <button class="btn">B2</button>
+                         <button class="btn">B3</button>
+                         <button class="btn">B4</button>
+                        
                     </div>
                 </div>
             </div>
@@ -231,14 +212,16 @@
                         <table class="table">
                           <!-- head -->
                           <thead>
-                            <tr>
-                              <div>
-                                <th>Seat</th>
-                                <p></p>
+                            
+                              <div class="flex">
+                                <div class="flex items-center justify-center">
+                                    <th>Seat <span class="bg-[#1DD100] p-1 rounded-full text-white">0</span>
+                                    </th>
+                                  </div>
+                                  <th>Class</th>
+                                  <th>Price</th>
+                                
                               </div>
-                              <th>Class</th>
-                              <th>Price</th>
-                            </tr>
                           </thead>
                           <tbody>
                             <!-- row 1 -->
@@ -261,7 +244,7 @@
                                 <h1>BDT 1100</h1>
                             </div>
                             <div class="flex">
-                                <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+                                <input type="text" placeholder="Type here" class="input w-full max-w-xs" />
                                 <button class="btn bg-[#1DD100]">Success</button>
                             </div>
                             <div class="flex justify-between items-center">
@@ -272,7 +255,7 @@
                       </div>
                 </div>
                 <div>
-                    <p class="mb-3 mt-3">Passenger Name*</p>
+                    <!-- <p class="mb-3 mt-3">Passenger Name*</p>
                     <label class="input input-bordered flex items-center gap-2">
                         <input type="text" class="grow" placeholder="Type Your Name" />
                       </label>
@@ -285,10 +268,10 @@
                       <p class="mb-3 mt-3">Email</p>
                       <label class="input input-bordered flex items-center gap-2">
                         <input type="password" class="grow" value="password" />
-                      </label>
+                      </label> -->
 
                       <!-- Open the modal using ID.showModal() method -->
-                    <button class="btn w-full bg-[#1DD100]" onclick="my_modal_2.showModal()">open modal</button>
+                    <button class="btn w-full bg-[#1DD100] text-white mt-3" onclick="my_modal_2.showModal()">Next</button>
                     <dialog id="my_modal_2" class="modal">
                       <div class="modal-box">
                         <h3 class="font-bold text-lg">Succes!</h3>
