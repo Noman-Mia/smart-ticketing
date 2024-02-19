@@ -16,14 +16,32 @@ for(const btn of allButton){
     })
 }
 // every click 1 will be (-)
-const allBtn =document.getElementsByClassName("btns"); 
-let cont= 8;
-for(const btn of allBtn){
-    btn.addEventListener('click',function (e){
-        cont=cont-1;
-        document.getElementById("dicress").innerText=cont;
+// const allBtn =document.getElementsByClassName("btns"); 
+// let cont= 8;
+// for(const btn of allBtn){
+//     btn.addEventListener('click',function (e){
+//         cont=cont-1;
+//         document.getElementById("dicress").innerText=cont;
+//     });
+
+// }
+
+// validation 
+const allBtn = document.getElementsByClassName("btns");
+let cont = 8;
+
+for (const btn of allBtn) {
+    btn.addEventListener('click', function (e) {
+        if (cont > 0) {
+            cont = cont - 1;
+            document.getElementById("dicress").innerText = cont;
+        } else {
+            alert ("Seat not available. Please try next time.");
+        }
     });
 }
+
+
 
 function addToCard(sitname) {
   const cartItem = document.createElement("tr");
