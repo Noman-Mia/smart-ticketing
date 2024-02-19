@@ -1,30 +1,39 @@
 const allBtns = document.querySelectorAll(".btns");
+const cart = document.getElementById("cart");
 
 for (let index = 0; index < allBtns.length; index++) {
   const btn = allBtns[index];
   const btnName = btn.innerText;
   console.log(btnName);
 }
+  
+//validation
+const allButton = document.getElementsByClassName("btns");
+let count = 0;
+const selectedSeats = new Set();
 
-// every click 1 will be (+)
-const allButton =document.getElementsByClassName("btns"); 
-let count= 0;
-for(const btn of allButton){
-    btn.addEventListener('click',function (e){
-        count=count+1;
-        document.getElementById("incress").innerText=count;
-    })
+for (const btn of allButton) {
+    btn.addEventListener('click', function (e) {
+        const seatNumber = this.innerText;
+        
+        if (!selectedSeats.has(seatNumber)) { 
+            selectedSeats.add(seatNumber); 
+            count = count + 1;
+            document.getElementById("incress").innerText = count;
+
+            if (count >= 4) { 
+                for (const btn of allButton) {
+                    btn.disabled = true;
+                    
+                }
+            }
+        } else {
+            alert("You have already selected this seat.");
+        }
+    });
 }
-// every click 1 will be (-)
-// const allBtn =document.getElementsByClassName("btns"); 
-// let cont= 8;
-// for(const btn of allBtn){
-//     btn.addEventListener('click',function (e){
-//         cont=cont-1;
-//         document.getElementById("dicress").innerText=cont;
-//     });
 
-// }
+
 
 // validation 
 const allBtn = document.getElementsByClassName("btns");
@@ -42,7 +51,6 @@ for (const btn of allBtn) {
 }
 
 
-
 function addToCard(sitname) {
   const cartItem = document.createElement("tr");
   cartItem.innerHTML = `<tr>
@@ -50,8 +58,16 @@ function addToCard(sitname) {
   <td>Economy</td>
   <td>550</td>
 </tr>`;
-  const parentElement = document.getElementById("cart");
-  parentElement.appendChild(cartItem);
+  
+  cart.appendChild(cartItem);
+  
+  let totalPrice = calculator(cart.childElementCount);
+  const total = document.getElementById("totalPrice");
+  total.innerText = totalPrice;
 }
 
+function calculator(seatNumber){
+  let totalPrize = 550 * seatNumber;
+  return totalPrize;
+}
 

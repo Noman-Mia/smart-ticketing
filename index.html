@@ -13,6 +13,10 @@
         padding: 0;
         box-sizing: border-box;
     };
+    .green-button {
+        background-color: green;
+        color: white;
+    };
 </style>
 <body>
     <header>
@@ -188,16 +192,16 @@
                        <div class="mt-5 flex justify-end"><img class="bg-[#1DD10026] lg:px-9 py-2 mb-4 rounded-xl" src="images/drive.svg" alt=""></div>
 
                     <div class="md:grid-cols-5 lg:grid grid-cols-5 gap-12">
-                         <button class="">A</button>
-                         <button onclick="addToCard('A1')" class="btn btns">A1</button>
-                         <button onclick="addToCard('A2')" class="btn btns">A2</button>
-                         <button onclick="addToCard('A3')" class="btn btns">A3</button>
-                         <button onclick="addToCard('A4')" class="btn btns">A4</button>
+                         <button class="">A</button> 
+                         <button onclick="addToCard('A1')" class="btn btns" id="A1">A1</button>
+                         <button onclick="addToCard('A2')" class="btn btns" id="A2">A2</button>
+                         <button onclick="addToCard('A3')" class="btn btns" id="A3">A3</button>
+                         <button onclick="addToCard('A4')" class="btn btns" id="A4">A4</button>
                          <button class="">B</button>
-                         <button onclick="addToCard('B1')" class="btn btns">B1</button>
-                         <button onclick="addToCard('B2')" class="btn btns">B2</button>
-                         <button onclick="addToCard('B3')" class="btn btns">B3</button>
-                         <button onclick="addToCard('B4')" class="btn btns">B4</button>
+                         <button onclick="addToCard('B1')" class="btn btns" id="B1">B1</button>
+                         <button onclick="addToCard('B2')" class="btn btns" id="B2">B2</button>
+                         <button onclick="addToCard('B3')" class="btn btns" id="B3">B3</button>
+                         <button onclick="addToCard('B4')" class="btn btns" id="B4">B4</button>
                     </div>
                 </div>
             </div>
@@ -234,7 +238,7 @@
                         <div class="">
                             <div class="flex justify-between items-center">
                                 <p class="mb-3 mt-3">Total Price</p>
-                                <h1>BDT 1100</h1>
+                                <h1 >BDT <span id="totalPrice">0</span></h1>
                             </div>
                             <div class="flex">
                                 <input type="text" placeholder="Type here" class="input w-full max-w-xs" />
@@ -297,5 +301,8 @@
             </div>
      </footer>
      <script src="js/app-1.js"></script>
+     <script>
+       
+    </script>
 </body>
 </html>
