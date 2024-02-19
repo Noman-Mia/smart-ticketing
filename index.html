@@ -240,13 +240,17 @@
                                 <p class="mb-3 mt-3">Total Price</p>
                                 <h1 >BDT <span id="totalPrice">0</span></h1>
                             </div>
-                            <div class="flex">
-                                <input type="text" placeholder="Type here" class="input w-full max-w-xs" />
-                                <button class="btn bg-[#1DD100]">Success</button>
+                            <div class="flex justify-between items-center">
+                                <p class="mb-3 mt-3">Discount Price</p>
+                                <h1 >BDT <span id="discountPrice">0</span></h1>
+                            </div>
+                            <div id="coupon-section" class="flex">
+                                <input id="coupon-input" type="text" placeholder="Type here" class="input w-full max-w-xs" />
+                                <button onclick="getDiscount()" class="btn bg-[#1DD100]">Success</button>
                             </div>
                             <div class="flex justify-between items-center">
                                 <p class="mt-3">Grand Total</p>
-                                <h1>BDT 1100</h1>
+                                <h1>BDT <span id="grand-total-money"></span> </h1>
                             </div>
                         </div>  
                       </div>

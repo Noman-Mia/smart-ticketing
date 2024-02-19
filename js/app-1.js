@@ -1,10 +1,14 @@
 const allBtns = document.querySelectorAll(".btns");
 const cart = document.getElementById("cart");
+const totalElement = document.getElementById("totalPrice")
+const total = totalElement.innerText;
+const grandMoney = document.getElementById('grand-total-money');
+const couponSection = document.getElementById('coupon-section');
+const discountElement = document.getElementById('discountPrice');
 
 for (let index = 0; index < allBtns.length; index++) {
   const btn = allBtns[index];
   const btnName = btn.innerText;
-  console.log(btnName);
 }
   
 //validation
@@ -51,6 +55,9 @@ for (const btn of allBtn) {
 }
 
 
+
+// add your seat to cart
+let totalPrice = 0;
 function addToCard(sitname) {
   const cartItem = document.createElement("tr");
   cartItem.innerHTML = `<tr>
@@ -61,13 +68,47 @@ function addToCard(sitname) {
   
   cart.appendChild(cartItem);
   
-  let totalPrice = calculator(cart.childElementCount);
-  const total = document.getElementById("totalPrice");
-  total.innerText = totalPrice;
+  totalPrice = calculator(cart.childElementCount);
+  totalElement.innerText = totalPrice;
 }
 
+
+
+
+// total seat price calculator
 function calculator(seatNumber){
-  let totalPrize = 550 * seatNumber;
-  return totalPrize;
+  let totalPrice = 550 * seatNumber;
+  return totalPrice;
+}
+
+
+
+
+// use Coupon Code and get discount
+function getDiscount(){
+  const couponInputElement = document.getElementById('coupon-input');
+  const couponInput = couponInputElement.value;
+
+  if(couponInput === 'NEW15'){
+      const discount = totalPrice * (15/100);
+      const grandTotal = totalPrice - discount;
+      discountElement.innerText = discount;
+      grandMoney.innerText = grandTotal;
+      couponSection.classList.add('hidden')
+      alert(`Congrates! You have got discount ${discount} Tk`);
+  }
+  else if(couponInput === 'Couple 20'){
+      const discount = totalPrice * (20/100);
+      const grandTotal = totalPrice - discount;
+      discountElement.innerText = discount;
+      grandMoney.innerText = grandTotal;
+      couponSection.classList.add('hidden')
+      alert(`Congrates! You have got discount ${discount} Tk`);
+  }
+  else{
+      alert('Invalid Coupon Code!');
+      return;
+  }
+  couponInputElement.value = '';
 }
 
