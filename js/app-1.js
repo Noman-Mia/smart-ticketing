@@ -1,22 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const seatButtons = document.querySelectorAll(".btn");
+const allBtns = document.querySelectorAll(".btns");
 
-    for (let i = 0; i < seatButtons.length; i++) {
-        seatButtons[i].addEventListener("click", function () {
-            if (!seatButtons[i].classList.contains("selected")) {
-                seatButtons[i].classList.add("selected");
-                updateAvailableSeats(-1);
-            } else {
-                seatButtons[i].classList.remove("selected");
-                updateAvailableSeats(1);
-            };
-        });
-    }
+for (let index = 0; index < allBtns.length; index++) {
+  const btn = allBtns[index];
+  const btnName = btn.innerText;
+  console.log(btnName);
+}
 
-    function updateAvailableSeats(change) {
-        const seatsLeftElement = document.querySelector("#seats-left");
-        let seatsLeft = parseInt(seatsLeftElement.textContent);
-        seatsLeft += change;
-        seatsLeftElement.textContent = seatsLeft;
-    }
-});
+
+function addToCard(sitname) {
+  const cartItem = document.createElement("tr");
+  cartItem.innerHTML = `<tr>
+  <td>${sitname}</td>
+  <td>Economy</td>
+  <td>550</td>
+</tr>`;
+  const parentElement = document.getElementById("cart");
+  parentElement.appendChild(cartItem);
+}
+
+

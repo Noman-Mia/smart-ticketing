@@ -57,7 +57,7 @@
             <div class="flex flex-col justify-center items-center h-full">
                 <h1 class="text-white text-6xl lg:w-[742px] font-extrabold max-w-screen-md text-center lg:leading-[86px]">End-to-End Travel with  <span class="text-[#1DD100]">PH Paribahan</span></h1>
                 <p class="text-white text-[16px] max-w-lg text-center leading-[30px]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-                <button class="btn bg-[#1DD100] mt-5">Buy Tickets</button>
+                <button class="btn bg-[#1DD100] mt-5"><a class="text-white" href="click-here">Buy Tickets</a></button>
             </div>
             </div>
         </div>
@@ -169,12 +169,12 @@
     </section>
 
     <!-- Select Your Seat -->
-   <section>
+   <section">
         <div class="  lg:flex justify-between mx-auto w-11/12 mt-12">
             <!-- 1-part -->
             <div class="mb-3  lg:w-3/5"> 
                 <h1>Slect Your Seat</h1>  
-                <div>
+                <div id="click-here">
                    <div class="flex justify-between mt-5">
                      <div class="flex gap-2">
                         <img src="images/seat-gray.png" alt="">
@@ -189,16 +189,15 @@
 
                     <div class="md:grid-cols-5 lg:grid grid-cols-5 gap-12">
                          <button class="">A</button>
-                         <button class="btn">A1</button>
-                         <button class="btn">A2</button>
-                         <button class="btn">A3</button>
-                         <button class="btn">A4</button>
+                         <button onclick="addToCard('A1')" class="btn btns">A1</button>
+                         <button onclick="addToCard('A2')" class="btn btns">A2</button>
+                         <button onclick="addToCard('A3')" class="btn btns">A3</button>
+                         <button onclick="addToCard('A4')" class="btn btns">A4</button>
                          <button class="">B</button>
-                         <button class="btn">B1</button>
-                         <button class="btn">B2</button>
-                         <button class="btn">B3</button>
-                         <button class="btn">B4</button>
-                        
+                         <button onclick="addToCard('B1')" class="btn btns">B1</button>
+                         <button onclick="addToCard('B2')" class="btn btns">B2</button>
+                         <button onclick="addToCard('B3')" class="btn btns">B3</button>
+                         <button onclick="addToCard('B4')" class="btn btns">B4</button>
                     </div>
                 </div>
             </div>
@@ -223,19 +222,13 @@
                                 
                               </div>
                           </thead>
-                          <tbody>
+                          <tbody id="cart">
                             <!-- row 1 -->
-                            <tr class="">
+                            <!-- <tr>
                               <td>C2</td>
                               <td>Economoy</td>
                               <td>550</td>
-                            </tr>
-                            <!-- row 2 -->
-                            <tr>
-                              <td>C2</td>
-                              <td>Economoy</td>
-                              <td>550</td>
-                            </tr>
+                            </tr> -->
                           </tbody>
                         </table>
                         <div class="">
@@ -302,31 +295,6 @@
                   </nav>
             </div>
      </footer>
-<script src="js/app-1.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const seats = document.querySelectorAll(".table tbody tr");
-        let totalPrice = 0;
-
-        for (let i = 0; i < seats.length; i++) {
-            seats[i].addEventListener("click", function () {
-                if (!seats[i].classList.contains("selected")) {
-                    seats[i].classList.add("selected");
-                    totalPrice += parseInt(seats[i].querySelector("td:nth-child(3)").textContent);
-                } else {
-                    seats[i].classList.remove("selected");
-                    totalPrice -= parseInt(seats[i].querySelector("td:nth-child(3)").textContent);
-                }
-
-                updateTotalPrice();
-            });
-        }
-
-        function updateTotalPrice() {
-            const totalElement = document.querySelector(".flex.justify-between.items-center h1");
-            totalElement.textContent = `BDT ${totalPrice}`;
-        }
-    });
-</script>
+     <script src="js/app-1.js"></script>
 </body>
 </html>
