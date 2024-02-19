@@ -24,6 +24,7 @@ for (const btn of allButton) {
             selectedSeats.add(seatNumber); 
             count = count + 1;
             document.getElementById("incress").innerText = count;
+            this.classList.add('bg-green-500')
 
             if (count >= 4) { 
                 for (const btn of allButton) {
@@ -39,7 +40,7 @@ for (const btn of allButton) {
 
 
 
-// validation 
+// validation for available seat counter
 const allBtn = document.getElementsByClassName("btns");
 let cont = 8;
 
