@@ -25,7 +25,7 @@ for (const btn of allButton) {
             count = count + 1;
             document.getElementById("incress").innerText = count;
             this.classList.add('bg-green-500')
-
+            addToCard(seatNumber)
             if (count >= 4) { 
                 for (const btn of allButton) {
                     btn.disabled = true;
@@ -34,6 +34,7 @@ for (const btn of allButton) {
             }
         } else {
             alert("You have already selected this seat.");
+            return;
         }
     });
 }
@@ -64,7 +65,7 @@ function addToCard(sitname) {
   cartItem.innerHTML = `<tr>
   <td>${sitname}</td>
   <td>Economy</td>
-  <td>550</td>
+  <td>BDT 550</td>
 </tr>`;
   
   cart.appendChild(cartItem);
